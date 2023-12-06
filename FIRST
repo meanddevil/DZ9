@@ -1,0 +1,21 @@
+//задача 1
+int  UserWrite (string message)
+{
+    Console.Write (message);
+
+    int N = Convert.ToInt32(Console.ReadLine());
+
+    return  N;
+}
+
+void NtoOne(int N, int c){
+    if (c > N) return;
+    NtoOne(N, c + 1);
+    Console.Write(c + ", ");
+}
+
+int Nuser = UserWrite("Задайте натуральное число N:");
+int count = 2;
+Console.Write($"Для N={Nuser}:");
+NtoOne(Nuser, count);
+Console.Write(1);
