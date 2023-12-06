@@ -1,0 +1,33 @@
+//задача 2
+int User_Input(string input)
+{
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
+}
+
+int M = User_Input("Введите M: ");
+int N = User_Input("Введите N: ");
+
+//проверка
+int temp = M;
+if (M > N)
+{
+    M = N;
+    N = M;
+}
+
+PrintSum_MN(M, N, temp = 0);
+
+void PrintSum_MN(int M, int N, int sum_MN)
+{
+    sum_MN = sum_MN + N;
+    if (N <= M)
+    {
+        Console.Write($"Сумма элементов = {sum_MN} ");
+        return;
+    }
+    PrintSum_MN(M, N - 1, sum_MN);
+}
+
+
